@@ -1,0 +1,9 @@
+{
+    "git.autofetch": true,
+    "github.codespaces.defaultExtensions": [
+        "AmazonWebServices.aws-toolkit-vscode",
+        "hashicorp.terraform",
+        "erd0s.terraform-autocomplete",
+        "mhutchie.git-graph"
+      ]
+}
