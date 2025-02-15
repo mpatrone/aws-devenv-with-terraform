@@ -67,7 +67,7 @@ resource "aws_security_group" "mp_sg" {
 
 resource "aws_key_pair" "mp_auth" {
   key_name   = "mpkey"
-  public_key = file("../mp_key.pub")
+  public_key = file("~/.ssh/mp_key.pub")
 }
 
 resource "aws_instance" "dev_node" {
@@ -90,7 +90,7 @@ resource "aws_instance" "dev_node" {
     command = templatefile("${var.host_os}-ssh-config.tpl", {
       hostname = self.public_ip,
       user     = "ubuntu",
-    identityfile = "../mp_key" })
+    identityfile = "~/.ssh/mp_key" })
     interpreter = var.host_os == "windows" ? ["Powershell", "-Command"] : ["bash", "-c"]
   }
 }
